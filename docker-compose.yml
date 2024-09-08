@@ -4,8 +4,7 @@ services:
   node_backend:
     container_name: backend
     image: example:0.0.5
-    build:
-      context: ./backend
+    build: ./backend
     ports:
       - "3001:3001"
     environment:
@@ -16,6 +15,12 @@ services:
       - PGHOST=node_db
     depends_on:
       - node_db
+
+  node_frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "3000:3000"
 
   node_db:
     container_name: node_db

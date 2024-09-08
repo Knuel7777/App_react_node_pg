@@ -7,7 +7,7 @@ FROM node:18
 EXPOSE 3001
 
 # Establece el directorio de trabajo
-WORKDIR /src
+WORKDIR /usr/src/app
 
 # Copia el archivo package.json y package-lock.json
 COPY package.json package-lock*.json ./
