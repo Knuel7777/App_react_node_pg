@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e:any) => {
     e.preventDefault();
 
-    const endpoint = isLogin ? '/login' : '/register';
+    const endpoint = isLogin ? '/' : '/register';
     const userData = {
       username,
       email,
