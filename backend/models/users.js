@@ -24,7 +24,7 @@ const User = db.define("user", {
   },
   is_active: {
     type: Sequelize.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
     default: true
   }
 });

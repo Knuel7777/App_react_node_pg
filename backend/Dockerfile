@@ -1,22 +1,20 @@
-# backend/Dockerfile
-
-# Usa una imagen base de Node.js
+# Use an official Node.js runtime as a parent image
 FROM node:18
 
-# Expone el puerto en el que corre el backend (por ejemplo, 3001)
-EXPOSE 3001
-
-# Establece el directorio de trabajo
+# Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copia el archivo package.json y package-lock.json
-COPY package.json package-lock*.json ./
+# Copy the package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-# Instala las dependencias
-RUN npm install i npm
+# Install any needed packages
+RUN npm install
 
-# Copia el código de la aplicación
+# Copy the rest of the application files
 COPY . .
 
-# Comando para correr la aplicación
-CMD ["node", "backend/index.js"]
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Define the command to run the application
+CMD [ "node", "index.js" ]
